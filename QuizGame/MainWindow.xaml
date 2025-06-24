@@ -49,7 +49,8 @@
         </Grid>
         
         <Grid Grid.Row="3">
-            <TextBlock Text="Too low とか" 
+            <TextBlock x:Name="Check"
+                       Text="" 
                        Margin="100,0,0,0"
                        FontSize="16"/>
         </Grid>
@@ -58,7 +59,7 @@
                        Margin="100,0,0,0"
                        FontSize="20"
                        FontWeight="Bold"
-                       Text="10" />
+                       Text="" />
         </Grid>
         
         <Grid Grid.Row="6">
@@ -69,7 +70,7 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Name="StartButton"
+            <Button x:Name="StartButton"
                     Content="スタート" 
                     Grid.Column="1" 
                     VerticalAlignment="Center"
@@ -78,7 +79,7 @@
                     FontSize="20"
                     Background="#f6f6f6"
                     Click="StartButton_Click"/>
-            <Button Name="MethodButton"
+            <Button x:Name="MethodButton"
                     Content="操作方法" 
                     Grid.Column="3" 
                     VerticalAlignment="Center"
