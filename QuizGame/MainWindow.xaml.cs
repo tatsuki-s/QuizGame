@@ -10,6 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Collections.Generic;
 
 namespace QuizGame
 {
@@ -33,14 +34,12 @@ namespace QuizGame
             timer.Tick += Timer_Tick;
             InputBox.Focus();
         }
-
         private void StartTimer(int limit)
         {
             timeLeft = limit;
             Title.Text = timeLeft.ToString();
             timer.Start();
         }
-
         private void Timer_Tick(object sender, EventArgs e)
         {
             timeLeft--;
@@ -81,7 +80,6 @@ namespace QuizGame
                 {
                     StartTimer(10);
                 }
-
                 //デバッグ用
                 MessageBox.Show(randomNum.ToString());
 
@@ -96,7 +94,8 @@ namespace QuizGame
             string input = InputBox.Text;
             if (int.TryParse(input, out int inputNum))
             {
-                MessageBox.Show(inputNum.ToString());
+                //デバッグ用
+                //MessageBox.Show(inputNum.ToString());
 
                 if (inputNum == randomNum)
                 {
@@ -117,11 +116,15 @@ namespace QuizGame
                 History.Text += " " + inputNum;
                 InputBox.Clear();
                 count++;
+                if(count >= 10 && inputNum != randomNum)
+                {
+                    GameOver();
+                }
                 InputBox.Focus();
             }
             else
             {
-                MessageBox.Show("数字を入力してください");
+                MessageBox.Show("1から100までの数字を入力してください");
                 InputBox.Clear();
             }
         }
@@ -129,7 +132,6 @@ namespace QuizGame
         {
             timer.Stop();
             Check.Text = "";
-
         }
         private void GameOver()
         {
@@ -166,6 +168,12 @@ namespace QuizGame
             if (StartButton.Content.ToString() == "送信")
             {
                 GoStart();
+            }
+            else if (MethodButton.Content.ToString() == "操作方法")
+            {
+
+                Window1 window1 = new Window1();
+                window1.Show();
             }
         }
         private void StopButton_Click(object sender, RoutedEventArgs e)
