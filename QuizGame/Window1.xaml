@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuizGame"
+        KeyDown="Window_KeyDown"
         mc:Ignorable="d"
         Title="操作説明" Height="450" Width="800">
     <Grid
@@ -14,6 +15,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="これはドキュメント的なやつです" />
         <Grid Grid.Row="1">
+            <!--
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
@@ -21,9 +23,13 @@
             <Button Grid.Column="0"
                     Width="200"
                     Margin="30,10"/>
-            <Button Grid.Column="1"
+            -->
+            <Button x:Name="QuitDocButton"
+                    Grid.Column="1"
                     Width="200"
-                    Margin="30,10"/>
+                    Margin="30,10"
+                    Content="閉じる（Q）"
+                    Click="QuitDocButton_Click"/>
         </Grid>
     </Grid>
 </Window>

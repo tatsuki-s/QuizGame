@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace QuizGame
 {
@@ -22,6 +23,17 @@ namespace QuizGame
         public Window1()
         {
             InitializeComponent();
+        }
+
+        private void QuitDocButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this).Close();
+        }
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Q)
+            Window.GetWindow(this).Close();
+
         }
     }
 }

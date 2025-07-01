@@ -207,6 +207,20 @@ namespace QuizGame
                 Window1 window1 = new Window1();
                 window1.Show();
             }
+            if (e.Key == Key.Space)
+            {
+                if (StartButton.IsEnabled && StartButton.Content.ToString() == "スタート")
+                {
+                    StartGame();
+                }
+            }
+            if (e.Key == Key.Z)
+            {
+                if (StartButton.IsEnabled && StartButton.Content.ToString() == "送信")
+                {
+                    GoStart();
+                }
+            }
         }
 
     }
