@@ -13,7 +13,29 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="これはドキュメント的なやつです" />
+        <TextBlock>
+            <TextBlock FontSize="18" FontWeight="Bold">概要</TextBlock><LineBreak />
+            このゲームは，1から100までの数字を当てるゲームです。<LineBreak />
+            数字は毎回ランダムに生成されるので，10回以内に正解してください。<LineBreak />
+            敗北条件は，「10回以内に正解すること」と「時間内に正解すること」という2点のみのシンプルなゲームです。<LineBreak />
+            時間制限については，ハード・ノーマル・イージーから選ぶことで，変更できます。<LineBreak />
+            <LineBreak />
+            <TextBlock FontSize="18" FontWeight="Bold">操作説明</TextBlock><LineBreak />
+            ゲーム開始時，スタートボタンまたはスペースキーでスタートします。<LineBreak />
+            ゲームがスタートすると，自動的にテキストボックスが表示され，そのに文字を入力したらEnterキーまたは送信ボタンで確認します。<LineBreak />
+            値があっていれば「正解！」と表示され，ゲームが終了します。<LineBreak />
+            間違っていれば，「不正解！」と表示され，次の入力を待ちます。<LineBreak />
+            10回以内かつ制限時間内に正解できなかった場合「GAME OVER」と表示され，ゲームが終了します。<LineBreak />
+            <LineBreak />
+            <TextBlock FontSize="18" FontWeight="Bold">クレジット</TextBlock><LineBreak />
+            
+            作成者：Tatsuki Sawaguchi<LineBreak />
+            イラスト：Tatsuki Sawaguchi<LineBreak />
+            元ネタがありますので，紹介しておきます。<LineBreak />
+             <Hyperlink NavigateUri = "https://developer.mozilla.org/ja/docs/Learn_web_development/Core/Scripting/A_first_splash" RequestNavigate="Hyperlink_RequestNavigate">元ネタ</Hyperlink>
+        <LineBreak/>
+            
+        </TextBlock>
         <Grid Grid.Row="1">
             <!--
             <Grid.ColumnDefinitions>

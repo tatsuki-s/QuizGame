@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuizGame"
         mc:Ignorable="d"
-        Title="MainWindow"
+        Title="The GAME"
         KeyDown="Window_KeyDown"
         Focusable="True"
         Loaded="Window_Loaded"

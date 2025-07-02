@@ -9,7 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Window2.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Images\UnityDefaultSky.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Window2.xaml" />
   </ItemGroup>
 
   <ItemGroup>

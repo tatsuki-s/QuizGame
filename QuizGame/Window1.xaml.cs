@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Windows.Navigation;
+using System.Diagnostics;
 
 namespace QuizGame
 {
@@ -34,6 +36,11 @@ namespace QuizGame
             if (e.Key == Key.Q)
             Window.GetWindow(this).Close();
 
+        }
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
+            e.Handled = true;
         }
     }
 }

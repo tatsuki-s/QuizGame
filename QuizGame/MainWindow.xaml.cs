@@ -70,18 +70,18 @@ namespace QuizGame
 
                 if (selected == "Easy")
                 {
-                    StartTimer(100);
+                    StartTimer(60);
                 }
                 else if (selected == "Nomal")
                 {
-                    StartTimer(60);
+                    StartTimer(30);
                 }
                 else if (selected == "Hard")
                 {
                     StartTimer(10);
                 }
                 //デバッグ用
-                MessageBox.Show(randomNum.ToString());
+                //MessageBox.Show(randomNum.ToString());
 
             }
             else if (StartButton.Content.ToString() == "送信")
@@ -138,6 +138,7 @@ namespace QuizGame
 
             timer.Stop();
             Title.Text = "GAME OVER ^^";
+            Check.Text = "正解：" + randomNum.ToString();
             StartButton.IsEnabled = false;
             InputBox.IsEnabled = false;   
         }
