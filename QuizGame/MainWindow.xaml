@@ -44,7 +44,7 @@
                       Margin="0,0,0,0"
                       FontSize="18">
                 <ComboBoxItem Content="Easy"/>
-                <ComboBoxItem Content="Nomal"/>
+                <ComboBoxItem Content="Normal"/>
                 <ComboBoxItem Content="Hard"/>
             </ComboBox>
 

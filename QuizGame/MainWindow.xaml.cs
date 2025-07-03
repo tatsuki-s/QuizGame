@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,7 +12,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-using System.Collections.Generic;
 
 namespace QuizGame
 {
@@ -26,6 +27,7 @@ namespace QuizGame
         public MainWindow()
         {
             InitializeComponent();
+            this.Closing += MainWindow_Closing;
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -72,7 +74,7 @@ namespace QuizGame
                 {
                     StartTimer(60);
                 }
-                else if (selected == "Nomal")
+                else if (selected == "Normal")
                 {
                     StartTimer(30);
                 }
@@ -97,7 +99,12 @@ namespace QuizGame
                 //デバッグ用
                 //MessageBox.Show(inputNum.ToString());
 
-                if (inputNum == randomNum)
+                if (inputNum < 1 || inputNum > 100)
+                {
+                    MessageBox.Show("1から100までの数字を入力してください");
+                    InputBox.Clear();
+                }
+                else if (inputNum == randomNum)
                 {
                     Check.Text = "正解";
                     StopGame();
@@ -105,18 +112,20 @@ namespace QuizGame
                     InputBox.IsEnabled = false;
                     Title.Text = "Clear!";
                 }
-                else if (inputNum >= randomNum)
+                else if (inputNum > randomNum)
                 {
                     Check.Text = "まだ大きい";
+                    History.Text += " " + inputNum;
+                    count++;
                 }
                 else
                 {
                     Check.Text = "まだ小さい";
+                    History.Text += " " + inputNum;
+                    count++;
                 }
-                History.Text += " " + inputNum;
                 InputBox.Clear();
-                count++;
-                if(count >= 10 && inputNum != randomNum)
+                if (count >= 10 && inputNum != randomNum)
                 {
                     GameOver();
                 }
@@ -140,7 +149,7 @@ namespace QuizGame
             Title.Text = "GAME OVER ^^";
             Check.Text = "正解：" + randomNum.ToString();
             StartButton.IsEnabled = false;
-            InputBox.IsEnabled = false;   
+            InputBox.IsEnabled = false;
         }
 
         private void ShutDownGame()
@@ -183,7 +192,7 @@ namespace QuizGame
         }
         //参照
         private void Window_KeyDown(object sender, KeyEventArgs e)
-        {   
+        {
             if (Check.Text != "正解")
             {
                 Check.Text = "";
@@ -223,6 +232,9 @@ namespace QuizGame
                 }
             }
         }
-
+        private void MainWindow_Closing(object sender, CancelEventArgs e)
+        {
+            ShutDownGame();
+        }
     }
 }
