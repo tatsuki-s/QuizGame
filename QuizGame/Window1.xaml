@@ -31,9 +31,9 @@
             <TextBlock FontSize="18" FontWeight="Bold">クレジット</TextBlock><LineBreak />
             
             作成者：Tatsuki Sawaguchi<LineBreak />
-            イラスト：Tatsuki Sawaguchi<LineBreak />
-            元ネタがありますので，紹介しておきます。<LineBreak />
-             <Hyperlink NavigateUri = "https://developer.mozilla.org/ja/docs/Learn_web_development/Core/Scripting/A_first_splash" RequestNavigate="Hyperlink_RequestNavigate">元ネタ</Hyperlink>
+            <Hyperlink NavigateUri = "https://github.com/tatsuki-s/QuizGame.git" RequestNavigate="Hyperlink_RequestNavigate">GitHubリポジトリはこちら</Hyperlink><LineBreak />
+            元ネタがありますので，こちらも紹介しておきます。<LineBreak />
+            <Hyperlink NavigateUri = "https://developer.mozilla.org/ja/docs/Learn_web_development/Core/Scripting/A_first_splash" RequestNavigate="Hyperlink_RequestNavigate">元ネタ</Hyperlink>
         <LineBreak/>
             
         </TextBlock>
